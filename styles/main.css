@@ -1,0 +1,84 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #4BEDD3;
+}
+
+.emphasize {
+    font-weight: bold;
+}
+
+.header {
+    background-color: #4BEDD3;
+    height: 40px;
+    color: white;
+}
+
+.title {
+    height: 50px;
+    color: #F3FDFF;
+}
+
+.title {
+    font-family: 'Germania One', cursive;
+    cursor: pointer;
+    text-align: center;
+    font-size: 28px;
+    line-height: 50px;
+}
+
+.leftnav {
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    background-color: aqua;
+}
+
+.leftnav .nav-button {
+    cursor: pointer;
+    font-size: 16px;
+    height: 36px;
+    line-height: 36px;
+    border-top: 1px solid #fafafa;
+}
+
+.leftnav .nav-button:last-child {
+    border-bottom: 1px solid #fafafa;
+}
+
+.leftnav .nav-button.selected {
+    color: white;
+    font-weight: 700;
+}
+
+.leftnav .nav-button:hover {
+    background-color: white;
+    color: aqua;
+    font-weight: 700;
+}
+
+#main-container {
+    position: relative;
+    width: 80%;
+    margin-left: 20%;
+    background-color: white;
+    color: black;
+}
+
+#main-container > h1 {
+    margin: 0 30px;
+    line-height: 75px;
+    height: 75px;
+}

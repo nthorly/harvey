@@ -1,0 +1,10 @@
+#damaged-heat-map-container {
+    width: 100%;
+}
+#heatmap-search {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 100px;
+    left: 74px;
+}
