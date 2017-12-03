@@ -20,13 +20,12 @@ require([
     // and add the layer to the map
     let serviceUrl = "https://services8.arcgis.com/6o5BPp2zyzqM2NMp/ArcGIS/rest/services/Harvey_Pics/FeatureServer/0";
     let layer = new FeatureLayer(serviceUrl, {
-        outFields: [ "DateTime" ],
+        outFields: [ "OBJECTID" ],
         featureReduction: {
             type: "cluster"
         },
         infoTemplate: new PopupTemplate({
-            title: "{facname}",
-            description: "{DateTime}"
+            description: "<img src='" + serviceUrl + "/{OBJECTID}/attachments/{OBJECTID}' />"
         })
     });
     map.addLayer(layer);
