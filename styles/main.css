@@ -19,12 +19,6 @@ a:hover {
     font-weight: bold;
 }
 
-.header {
-    background-color: #4BEDD3;
-    height: 40px;
-    color: white;
-}
-
 .title {
     height: 50px;
     color: #F3FDFF;
@@ -43,7 +37,20 @@ a:hover {
     width: 20%;
     height: 100%;
     text-align: center;
-    background-color: aqua;
+    background-color: #80BFB7;
+    color: #003B55;
+}
+
+.leftnav h1 {
+    display: inline-block;
+    background-color: #80BFB7;
+    color: white;
+}
+
+.leftnav img {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
 }
 
 .leftnav .nav-button {
@@ -51,11 +58,11 @@ a:hover {
     font-size: 16px;
     height: 36px;
     line-height: 36px;
-    border-top: 1px solid #fafafa;
+    border-top: 1px solid white;
 }
 
 .leftnav .nav-button:last-child {
-    border-bottom: 1px solid #fafafa;
+    border-bottom: 1px solid white;
 }
 
 .leftnav .nav-button.selected {
@@ -65,7 +72,7 @@ a:hover {
 
 .leftnav .nav-button:hover {
     background-color: white;
-    color: aqua;
+    color: #01597F;
     font-weight: 700;
 }
 
@@ -77,8 +84,13 @@ a:hover {
     color: black;
 }
 
-#main-container > h1 {
-    margin: 0 30px;
+#main-container > h1, .leftnav h1 {
+    margin: 0;
     line-height: 75px;
     height: 75px;
+}
+
+#main-container > h1 {
+    padding: 0 30px;
+    border-bottom: 1px solid #0B87A1;
 }
