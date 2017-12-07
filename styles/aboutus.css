@@ -1,0 +1,23 @@
+body{
+
+font-family: 'Quicksand', sans-serif;
+background-color: gray;
+height: 400px;
+width: 600px;
+margin: 40px 20px;
+padding: 10px;
+color: white;
+}
+
+.andy, .abdul, .nicole, .melissa{
+	
+color: white;
+text-align: center;
+
+}
+
+.image1, .image2, .image3, .image4{
+	
+	display: block;
+	margin: auto;
+}
