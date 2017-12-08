@@ -3,10 +3,11 @@
 const INJECTED_SCRIPT_ID = 'harvey-map-script';
 const MAIN_CONTAINER_ID = 'main-container';
 const SELECTED_CLASS = 'selected';
+const OPEN_CLASS = 'open';
 
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.leftnav .nav-button').forEach((navBtn) => {
-        if (navBtn.id === 'home-page') {
+        if (navBtn.id === 'hurricane-harvey') {
             setTemplate(navBtn.id);
         }
 
@@ -17,10 +18,24 @@ document.addEventListener("DOMContentLoaded", function() {
             setTemplate(navButton.id);
         });
     });
+    document.querySelectorAll('.leftnav .nav-button-container .title').forEach((navBtnContainer) => {
+        navBtnContainer.addEventListener('click', (event) => {
+            console.log('click, ', event.target);
+            event.preventDefault();
+            let navButtonContainer = event.target;
+            if (navButtonContainer.classList.contains(OPEN_CLASS)) return;
+            setOpen(navButtonContainer);
+        });
+    });
 });
 
+function setOpen(selectedContainer) {
+    selectedContainer.parentElement.parentElement.getElementsByClassName(OPEN_CLASS)[0].classList.remove(OPEN_CLASS);
+    selectedContainer.parentElement.classList.add(OPEN_CLASS);
+}
+
 function setSelected(selectedButton) {
-    selectedButton.parentElement.getElementsByClassName(SELECTED_CLASS)[0].classList.remove(SELECTED_CLASS);
+    selectedButton.parentElement.parentElement.getElementsByClassName(SELECTED_CLASS)[0].classList.remove(SELECTED_CLASS);
     selectedButton.classList.add(SELECTED_CLASS);
 }
 
@@ -31,8 +46,11 @@ function getTemplatePathById(id) {
     };
 
     switch(id) {
-        case 'home-page':
-            templateObj.template = 'home-page.html';
+        case 'hurricane-harvey':
+            templateObj.template = 'hurricane-harvey.html';
+            break;
+        case 'about-the-authors':
+            templateObj.template = 'about-authors.html';
             break;
         case 'damaged-heatmap':
             templateObj.script = 'damaged-heat-map.js';

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Title Placeholder</title>
-    <link rel="shortcut icon" href="images/hurricaneSymbol.jpg">
+    <title>Hurricane Harvey</title>
+    <link rel="shortcut icon" href="images/hurricaneSymbol.svg"/>
     <link href="https://fonts.googleapis.com/css?family=Germania+One|Quicksand|Source+Serif+Pro" rel="stylesheet">
     <!--custom styles-->
     <link href="styles/main.css" type="text/css" rel="stylesheet"/>
@@ -23,14 +23,22 @@
     <div class="leftnav">
         <h1>Hurricane Harvey </h1>
         <img src="images/hurricaneSymbol.svg" alt="">
-        <div id="home-page" class="nav-button selected">Home</div>
-        <div id="damaged-heatmap" class="nav-button">Damaged Buildings Heat Map</div>
-        <div id="photo-cluster" class="nav-button">Photo Cluster Map</div>
-        <div id="layer-swipe" class="nav-button">Layer Swipe Map</div>
-        <div id="zonal-stats" class="nav-button">Zonal Statistics Map</div>
+        <div class="nav-button-container open">
+            <div class="title">Home</div>
+            <div id="hurricane-harvey" class="nav-button selected">Hurricane Harvey</div>
+            <div id="about-the-authors" class="nav-button">About the Authors</div>
+        </div>
+        <div class="nav-button-container">
+            <div class="title">Analysis</div>
+            <div id="damaged-heatmap" class="nav-button">Damaged Buildings Heat Map</div>
+            <div id="zonal-stats" class="nav-button">Zonal Statistics Map</div>
+        </div>
+        <div class="nav-button-container">
+            <div class="title">Awareness</div>
+            <div id="photo-cluster" class="nav-button">Photo Cluster Map</div>
+            <div id="layer-swipe" class="nav-button">Layer Swipe Map</div>
+        </div>
     </div>
-    <div id="main-container">
-        <p>main container</p>
-    </div>
+    <div id="main-container"></div>
 </body>
 </html>

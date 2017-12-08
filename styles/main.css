@@ -19,19 +19,6 @@ a:hover {
     font-weight: bold;
 }
 
-.title {
-    height: 50px;
-    color: #F3FDFF;
-}
-
-.title {
-    font-family: 'Germania One', cursive;
-    cursor: pointer;
-    text-align: center;
-    font-size: 28px;
-    line-height: 50px;
-}
-
 .leftnav {
     position: fixed;
     width: 20%;
@@ -53,32 +40,54 @@ a:hover {
     height: 20px;
 }
 
-.leftnav .nav-button {
+.leftnav .nav-button-container {
+    height: auto;
     cursor: pointer;
     font-size: 16px;
-    height: 36px;
     line-height: 36px;
     border-top: 1px solid white;
 }
 
-.leftnav .nav-button:last-child {
+.leftnav .nav-button-container .nav-button {
+    height: 0;
+    opacity: 0;
+        -webkit-transition: height 0.5s ease;
+    -moz-transition: height 0.5s ease;
+    -ms-transition: height 0.5s ease;
+    -o-transition: height 0.5s ease;
+    transition: height 0.5s ease;
+}
+
+.leftnav .nav-button-container .title,
+.leftnav .nav-button-container.open .nav-button {
+    opacity: 1;
+    height: 40px;
+}
+
+.leftnav .nav-button-container:last-child {
     border-bottom: 1px solid white;
 }
 
-.leftnav .nav-button.selected {
-    color: white;
+.leftnav .nav-button-container.open {
+    color: #0B87A1;
+    font-weight: 700;
+}
+
+.leftnav .nav-button-container:hover {
+    background-color: white;
+    color: #01597F;
     font-weight: 700;
 }
 
 .leftnav .nav-button:hover {
-    background-color: white;
-    color: #01597F;
+    background-color: #F3FDFF;
     font-weight: 700;
 }
 
 #main-container {
     position: relative;
     width: 80%;
+    height: 100%;
     margin-left: 20%;
     background-color: white;
     color: black;

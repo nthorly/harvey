@@ -18,8 +18,8 @@ require([
 
     });
 
-    // Harvey NOAA flood image from my arcgis account
-    let urlString = "https://tiles.arcgis.com/tiles/6o5BPp2zyzqM2NMp/arcgis/rest/services/Harvey_Image/MapServer";
+    // Harvey USACE flood image from my arcgis account
+    let urlString = "https://ags-swg.esriemcs.com/arcgis/rest/services/HarveyImagery/Harvey50cm_sid/MapServer/";
     let tiledLayer = new ArcGISTiledMapServiceLayer(urlString);
     map.addLayers([tiledLayer]);
 
