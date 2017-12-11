@@ -7,13 +7,11 @@ require([
     "esri/dijit/Legend",
     "dojo/domReady!"
     
-], function(Map, FeatureLayer, PopupTemplate, Legend
-) {
-
+], function(Map, FeatureLayer, PopupTemplate, Legend) {
     let map = new Map("photo-cluster-map-container", {
         basemap: "dark-gray-vector",
-        center: [-96.44109, 29.6122],
-        zoom: 7
+        center: [-94.9774, 29.7355],
+        zoom: 8
     });
 
     // Enable clustering in the layer's constructor
@@ -31,7 +29,7 @@ require([
     map.addLayer(layer);
 
     let legend;
-    map.on("load", function(){
+    map.on("load", function() {
         legend = new Legend({
             map: map,
             layerInfos: [{
@@ -44,14 +42,14 @@ require([
 
     let clusteringCheckbox = document.getElementById("use-clustering");
     // toggles clustering on and off in sync with the checkbox
-    clusteringCheckbox.addEventListener("click", function(event){
+    clusteringCheckbox.addEventListener("click", function(event) {
         let checked = event.target.checked;
         toggleFeatureReduction(checked);
     });
 
-    function toggleFeatureReduction(yes){
-        if(yes){
-            if(!layer.getFeatureReduction()){
+    function toggleFeatureReduction(yes) {
+        if (yes) {
+            if(!layer.getFeatureReduction()) {
                 layer.setFeatureReduction({
                     type: "cluster"
                 });

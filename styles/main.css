@@ -8,7 +8,7 @@ body {
 
 a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 a:hover {
@@ -50,7 +50,7 @@ a:hover {
 
 .leftnav .nav-button-container .nav-button {
     height: 0;
-    opacity: 0;
+    visibility: hidden;
         -webkit-transition: height 0.5s ease;
     -moz-transition: height 0.5s ease;
     -ms-transition: height 0.5s ease;
@@ -58,30 +58,52 @@ a:hover {
     transition: height 0.5s ease;
 }
 
+.leftnav .nav-button-container .title {
+    border-bottom: 1px solid white;
+    font-size: 20px;
+}
+
+.leftnav .nav-button-container.open {
+    color: #003B55;
+    font-weight: 700;
+}
+
 .leftnav .nav-button-container .title,
 .leftnav .nav-button-container.open .nav-button {
-    opacity: 1;
+    visibility: visible;
     height: 40px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 500;
 }
+
+.leftnav .nav-button-container.open .title,
+.leftnav .nav-button-container.open .nav-button.selected {
+    font-weight: 700;
+}
+
 
 .leftnav .nav-button-container:last-child {
     border-bottom: 1px solid white;
 }
 
-.leftnav .nav-button-container.open {
-    color: #0B87A1;
+.leftnav .nav-button-container:hover {
+    background-color: white;
+    color: #003B55;
     font-weight: 700;
 }
 
-.leftnav .nav-button-container:hover {
-    background-color: white;
+.leftnav .nav-button-container.open:hover {
+    background-color:  #80BFB7;
     color: #01597F;
     font-weight: 700;
 }
 
 .leftnav .nav-button:hover {
     background-color: #F3FDFF;
-    font-weight: 700;
+    font-size: 17px;
+    font-weight: 900;
 }
 
 #main-container {
@@ -93,7 +115,8 @@ a:hover {
     color: black;
 }
 
-#main-container > h1, .leftnav h1 {
+#main-container > h1,
+.leftnav h1 {
     margin: 0;
     line-height: 75px;
     height: 75px;
@@ -102,4 +125,28 @@ a:hover {
 #main-container > h1 {
     padding: 0 30px;
     border-bottom: 1px solid #0B87A1;
+}
+
+#main-container .map-description,
+#main-container .harvey-content {
+    font-size: 14px;
+    line-height: 36px;
+    padding: 30px 7%;
+}
+
+#main-container .harvey-content img {
+    margin: 30px 0;
+    width: 400px;
+    display: block;
+}
+
+#main-container .harvey-content img.hurricane {
+    width: 100%;
+}
+
+#main-container .harvey-map-container {
+    position: relative;
+    height: 600px;
+    width: 90%;
+    margin: 0 5% 50px;
 }

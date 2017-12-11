@@ -3,13 +3,8 @@
 require([
     "esri/map",
     "esri/layers/ArcGISTiledMapServiceLayer",
-    "esri/dijit/LayerSwipe",
-    "esri/dijit/BasemapGallery",
-
-], function(
-    Map, ArcGISTiledMapServiceLayer, LayerSwipe, BasemapGallery
-){
-
+    "esri/dijit/LayerSwipe"
+], function(Map, ArcGISTiledMapServiceLayer, LayerSwipe) {
     let map = new Map("layer-swipe-container",{
         basemap: "hybrid",
         center: [-95.760, 29.713],

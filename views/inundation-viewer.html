@@ -1,0 +1,23 @@
+
+<h1>Flood Inundataion Profile</h1>
+<div class="map-description">This tool displays Riverine Flood Inundation Models for lower portions of the Brazos, Colorado, Guadalupe, Neches, Trinity, and Sabine Rivers along with the Buffalo, Brays, and Harris County Bayous.  Check the boxes beside any combination of dates to analyze inundation, recession, and duration of flood waters. Change the basemap to enable satellite imagery, topographic, or a number of other mapping styles.</div>
+<div class="container harvey-map-container" data-dojo-type="dijit/layout/BorderContainer"
+     data-dojo-props="design:'headline',gutters:false">
+    <div id="layerListPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'right'">
+        <P>Displayed Dates</P>
+        <div id="layerList"></div>
+        <div id="inunLegend"></div>
+        <span id="legendText">Modeled Inundation</span><br>
+    </div>
+    <div id="innundation-map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">
+        <div id="search"></div>
+        <div id="switchBasemap">
+            <div data-dojo-type="dijit/TitlePane"
+                 data-dojo-props="title:'Switch Basemap', open:false">
+                <div id="basemapContent" data-dojo-type="dijit/layout/ContentPane">
+                    <div id="basemapGallery"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

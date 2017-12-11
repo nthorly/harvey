@@ -1,3 +1,14 @@
-<h1>Damaged Buildings Heatmap</h1>
-<div id="heatmap-search"></div>
-<div id="damaged-heat-map-container"></div>
+<h1>Building Damage Heatmap</h1>
+<div class="map-description">This map visualizes the damaged buildings, modeled by FEMA, throughout Houston, TX in the form of a heatmap. The damage levels included in the map are Destroyed and Major Damage. Use the slide controls to manipulate the heatmap visualization. Click on the heatmap to show a pop-up window information of the damaged buildings and level of inundation. You can search for a specific place using the search bar.</div>
+<div class="harvey-map-container">
+    <div id="heatmap-search"></div>
+    <div id="damaged-heat-map-container"></div>
+    <div class="blurInfo">
+        <p>Blur Radius : <span id="blurValue">10</span></p>
+        <input id="blurControl" type="range" max=30 min=0 value=10 step=1/>
+        <p>Max Value : <span id="maxValue">100</span></p>
+        <input id="maxControl" type="range" max=500 min=0 value=100 step=1/>
+        <p>Min Value : <span id="minValue">0</span></p>
+        <input id="minControl" type="range" max=500 min=0 value=0 step=1/>
+    </div>
+</div>

@@ -15,15 +15,14 @@ require(["esri/Color",
         "esri/layers/ArcGISTiledMapServiceLayer",
         "esri/dijit/Search",
         "dojo/parser"
-    ], function(Color, string, registry, esriConfig, Map, ArcGISDynamicMapServiceLayer, Graphic,
-                Geoprocessor, FeatureSet, Draw, SimpleLineSymbol,
-                SimpleFillSymbol, ArcGISTiledMapServiceLayer, Search, parser) {
+    ], function(Color, string, registry, esriConfig, Map, ArcGISDynamicMapServiceLayer, Graphic, Geoprocessor,
+                FeatureSet, Draw, SimpleLineSymbol, SimpleFillSymbol, ArcGISTiledMapServiceLayer, Search, parser) {
     let map, gp, toolbar;
-
     try {
+        // parse esri widgets now since we are loading maps dynamically, not on page load.
         parser.parse();
     } catch(error) {
-        console.error('error parsing, ', error);
+        console.error('Error parsing esri widgets, ', error);
     }
 
     document.getElementById('drawPoly').addEventListener('click', () => {
@@ -68,6 +67,8 @@ require(["esri/Color",
     }
 
     function computeZonalStats(evtObj) {
+        let spinnerIcon = document.querySelector('i.fa.fa-spinner.fa-spin');
+        spinnerIcon.classList.add('show');
         console.log('show processing to user');
         let geometry = evtObj.geometry;
         /*After user draws shape on map using the draw toolbar compute the zonal*/
@@ -91,10 +92,10 @@ require(["esri/Color",
     }
 
     function displayResults(evtObj) {
-        console.log('display results');
+        let spinnerIcon = document.querySelector('i.fa.fa-spinner.fa-spin');
+        spinnerIcon.classList.remove('show');
         let results = evtObj.results;
         let content = string.substitute("<h4>The population in the user defined polygon is ${number:dojo.number.format}.</h4>",{number:results[0].value.features[0].attributes.SUM});
-
         registry.byId("dialog1").setContent(content);
         registry.byId("dialog1").show();
     }

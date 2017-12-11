@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     document.querySelectorAll('.leftnav .nav-button-container .title').forEach((navBtnContainer) => {
         navBtnContainer.addEventListener('click', (event) => {
-            console.log('click, ', event.target);
             event.preventDefault();
             let navButtonContainer = event.target;
             if (navButtonContainer.classList.contains(OPEN_CLASS)) return;
@@ -40,6 +39,7 @@ function setSelected(selectedButton) {
 }
 
 function getTemplatePathById(id) {
+    // instantiate template object to return
     let templateObj = {
         script: void(0),
         template: void(0)
@@ -68,6 +68,13 @@ function getTemplatePathById(id) {
             templateObj.script = 'zonal-stats-map.js';
             templateObj.template = 'zonal-stats-map.html';
             break;
+        case 'inundation-viewer':
+            templateObj.script = 'inundation-viewer.js';
+            templateObj.template = 'inundation-viewer.html';
+            break;
+        case 'sources':
+            templateObj.template = 'sources.html';
+            break;
         default:
             console.error('No template path found for id, ', id);
     }
@@ -76,14 +83,7 @@ function getTemplatePathById(id) {
 }
 
 function setTemplate(templateId) {
-    // jquery version of a GET request
-    // $.get(path).done((template) => {
-    //     document.getElementById(MAIN_CONTAINER_ID).innerHTML = httpRequest.responseText;
-    // }).fail((error) => {
-    // console.error('Template for path, ' + path + ', not found');
-    // });
-
-    let templateObj = getTemplatePathById(templateId)
+    const templateObj = getTemplatePathById(templateId)
     let httpRequest = new XMLHttpRequest();
     httpRequest.open('GET', 'views/' + templateObj.template);
     httpRequest.send(null);
