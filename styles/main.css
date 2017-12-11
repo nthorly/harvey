@@ -15,10 +15,6 @@ a:hover {
     color: #4BEDD3;
 }
 
-.emphasize {
-    font-weight: bold;
-}
-
 .leftnav {
     position: fixed;
     width: 20%;
@@ -115,8 +111,8 @@ a:hover {
     color: black;
 }
 
-#main-container > h1,
-.leftnav h1 {
+.leftnav h1,
+#main-container > h1 {
     margin: 0;
     line-height: 75px;
     height: 75px;

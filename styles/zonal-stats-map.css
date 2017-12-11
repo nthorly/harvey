@@ -4,6 +4,7 @@
     padding: 0;
     width: 100%;
 }
+
 #zonal-stats-search {
     display: block;
     position: absolute;
@@ -11,6 +12,7 @@
     top: 20px;
     left: 75px;
 }
+
 #zonal-stats-info {
     bottom: 20px;
     color: #444;

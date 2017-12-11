@@ -13,20 +13,20 @@
     left: 74px;
 }
 
-#switchBasemap{
+#switchBasemap {
     position: absolute;
     right: 20px;
     top: 22px;
     z-Index: 999;
 }
 
-#basemapContent{
+#basemapContent {
     width: 380px;
     height: 280px;
     overflow: auto;
 }
 
-#inunLegend{
+#inunLegend {
     display: inline-flex;
     width: 25px;
     height: 20px;
@@ -36,21 +36,21 @@
     border: 1px solid black;
 }
 
-#layerListPane{
+#layerListPane {
     width: 16%;
 }
 
 #layerListPane p,
-#legendText{
+#legendText {
     display: block;
     font-size: 12px;
 }
 
-.esriLayer{
+.esriLayer {
     background-color: #fff;
 }
 
-.esriLayerList .esriList{
+.esriLayerList .esriList {
     border-top: none;
 }
 
